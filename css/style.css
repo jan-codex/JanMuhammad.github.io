@@ -8777,13 +8777,16 @@ h1, h2, h3, h4, h5,
 
 .ftco-about .img-about {
   width: 100%;
-  z-index: 0;
-  position: relative; }
-  .ftco-about .img-about .img {
-    display: block;
-    width: 100%;
-    position: relative;
-    z-index: 1; }
+  max-width: 400px; /* optional: limit size on large screens */
+  aspect-ratio: 4 / 3; /* keeps same shape everywhere */
+  overflow: hidden;
+}
+
+.ftco-about .img-about .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills container without distortion */
+}
 
 .ftco-about ul.about-info {
   display: inline-block;
